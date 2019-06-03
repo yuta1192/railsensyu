@@ -39,3 +39,5 @@ $ rails server
 
 詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
 を参考にしてください。
+
+6/1.2はサボり申し訳ない未来の俺よ
