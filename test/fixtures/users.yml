@@ -3,15 +3,24 @@ michael:
   email: michael@example.com
   password_digest: <%= User.digest('password') %>
 
-  test "should redirect edit when not logged in" do
-    get edit_user_path(@user)
-    assert_not flash.empty?
-    assert_redirected_to login_url
-  end
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
+  password_digest: <%= User.digest('password') %>
 
-  test "should redirect update when not logged in" do
-    patch user_path(@user), params: { user: { name: @user.name,
-                                              email: @user.email } }
-    assert_not flash.empty?
-    assert_redirected_to login_url
-  end
+lana:
+  name: Lana Kane
+  email: hands@example.gov
+  password_digest: <%= User.digest('password') %>
+
+malory:
+  name: Malory Archer
+  email: boss@example.gov
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
